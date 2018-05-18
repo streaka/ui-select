@@ -304,13 +304,13 @@ uis.controller('uiSelectCtrl',
 
                 // finally equivalent
                 refreshPromise.then(function (value) {
-                  return refreshPromise.resolve(function () {
+                  return Promise.resolve(function () {
                     ctrl.refreshing = false;
                   }).then(function () {
                     return value;
                   });
                 }, function (reason) {
-                  return refreshPromise.resolve(function () {
+                  return Promise.resolve(function () {
                     ctrl.refreshing = false;
                   }).then(function () {
                     throw reason;

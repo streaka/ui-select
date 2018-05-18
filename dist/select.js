@@ -1,7 +1,7 @@
 /*!
  * streaka-ui-select
  * http://github.com/angular-ui/ui-select
- * Version: 0.20.1 - 2018-05-18T09:11:52.406Z
+ * Version: 0.20.3 - 2018-05-18T09:20:07.553Z
  * License: MIT
  */
 
@@ -581,13 +581,13 @@ uis.controller('uiSelectCtrl',
 
                 // finally equivalent
                 refreshPromise.then(function (value) {
-                  return refreshPromise.resolve(function () {
+                  return Promise.resolve(function () {
                     ctrl.refreshing = false;
                   }).then(function () {
                     return value;
                   });
                 }, function (reason) {
-                  return refreshPromise.resolve(function () {
+                  return Promise.resolve(function () {
                     ctrl.refreshing = false;
                   }).then(function () {
                     throw reason;
